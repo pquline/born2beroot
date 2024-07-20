@@ -121,11 +121,11 @@ PASS_WARN_AGE	7
 - change password policy for user:
 
 ```bash
+chage [username]
+# OR
 chage -M 30 [username]	# M: maximum number of days between password change
 chage -m 2 [username]	# m: minimum number of days between password change
 chage -W 7 [username]	# W: number of days of warning before password expires
-# OR
-chage [username]
 ```
 
 - create log directory: `mkdir /var/log/sudo`
@@ -140,7 +140,7 @@ Defaults	log_output
 Defaults	requiretty
 ```
 
-### Customization
+### Customization (optional)
 
 - install zsh:
 
@@ -169,8 +169,6 @@ alias bat="/usr/bin/batcat"
 
 STYLE='\033[0;32m\033[1m'
 NO_STYLE='\033[0m'
-
-# echo '$STYLE$  $NO_STYLE' &&
 
 alias print_users="echo '$STYLE$ sudo cat /etc/passwd | awk -F: \"{print \$1}\" $NO_STYLE' && sudo cat /etc/passwd | awk -F: '{print \$1}'"
 alias print_groups="echo '$STYLE$ sudo getent group | awk -F: \"{print \$1}\" $NO_STYLE' && sudo getent group | awk -F: '{print \$1}'"
@@ -326,6 +324,7 @@ cd ~/sgoinfre/Born2beroot
 sha1sum Born2beroot.vdi > evaluation_signature.txt
 diff evaluation_signature.txt signature.txt
 ```
+The result of the diff command is supposed to be blank because it means the signatures are similar (see `man diff`).
 
 ### Project Overview
 
