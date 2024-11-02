@@ -247,6 +247,7 @@ Port 4242
 difok = 7			# number of characters in the new password that must not be present in the old password
 minlen = 10			# minimum acceptable length for the new password
 dcredit = -1		# maximum credit for having digits in the new password (if less than 0, number of mandatory digits in the new password)
+lcredit = -1		# maximum credit for having lowercase characters in the new password (if less tgan 0, number of mandatory lowercase characters in the new password)
 ucredit = -1		# maximum credit for having uppercase characters in the new password (if less than 0, number of mandatory uppercase characters in the new password)
 maxrepeat = 3		# maximum number of allowed consecutive same characters in the new password
 usercheck = 1		# wheter to check if it contains the username in some form (0: false, 1: true)
